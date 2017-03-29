@@ -1,4 +1,7 @@
 # LYTFTP
+============
+注意：
+------------
 在iOS 手机上通过FTP 下载和上传文件 
 在电脑上开启FTP server 功能 需要关闭防火墙。以免产生问题。
 OS X系统上开启FTP server 功能使用：
@@ -12,8 +15,7 @@ Connected to 127.0.0.1.
 220 127.0.0.1 FTP server (tnftpd 20100324+GSSAPI) ready.
 Name (127.0.0.1:xxx): 
 password:
-
-============
+-----------
 Installation
 ------------
 Only need add LxFTPRequest.h and LxFTPRequest.m to your project.
@@ -31,7 +33,7 @@ Support
         Minimum support OS X version: Mac OS X 10.7
 
 -----------
-        #import "LxFTPRequest.h"
+#import "LxFTPRequest.h"
 ###Get resource list:
 
             LxFTPRequest * request = [LxFTPRequest resourceListRequest];
