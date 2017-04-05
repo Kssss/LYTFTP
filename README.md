@@ -1,7 +1,5 @@
 # LYTFTP
-============
 ##注意：
-------------
 在iOS 手机上通过FTP 下载和上传文件    
 在电脑上开启FTP server 功能 需要关闭防火墙。以免产生问题。   
 OS X系统上开启FTP server 功能使用：   
@@ -10,24 +8,22 @@ OS X系统上关闭FTP server 功能使用：
 sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist   
 测试FTP server是否正常：    
 在终端命令行使用命令,输入登录mac的电脑账号和密码。也可以自己在<用户和群组>创建FTP专用的账号。   
-
+```
 >MacBook-Pro:~ xxx$ ftp 127.0.0.1  
 >Connected to 127.0.0.1 
 >220 127.0.0.1 FTP server (tnftpd 20100324+GSSAPI) ready.  
 >Name (127.0.0.1:xxx):   
 >password:
-
------------
+```
 ##导入
-------------
-只需要导入  LxFTPRequest这个类倒入 项目
+    只需要导入  LxFTPRequest这个类倒入 项目
 ##支持
-------------
+
 Both support iOS and Mac OS X platforms.
 Minimum support iOS version: iOS 5.0
 Minimum support OS X version: Mac OS X 10.7
 
------------
+
 ###获取资源列表:
 ```
 LxFTPRequest * request = [LxFTPRequest resourceListRequest];
@@ -143,9 +139,5 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 ```
 
 #Be careful            
------------
 Demo must config FTP address, username, password correctly.
-License
------------
-LxFTPRequest is available under the Apache License 2.0. See the LICENSE file for more info.
 
