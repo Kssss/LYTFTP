@@ -1,11 +1,15 @@
 # LYTFTP
-##注意：
+1、注意：
 在iOS 手机上通过FTP 下载和上传文件    
 在电脑上开启FTP server 功能 需要关闭防火墙。以免产生问题。   
-OS X系统上开启FTP server 功能使用：   
-sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist  
-OS X系统上关闭FTP server 功能使用：    
-sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist   
+OS X系统上开启FTP server 功能使用：
+```
+sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+```
+OS X系统上关闭FTP server 功能使用：
+```
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
+```
 测试FTP server是否正常：    
 在终端命令行使用命令,输入登录mac的电脑账号和密码。也可以自己在<用户和群组>创建FTP专用的账号。   
 ```
@@ -15,16 +19,16 @@ sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
 >Name (127.0.0.1:xxx):   
 >password:
 ```
-##导入
-    只需要导入  LxFTPRequest这个类倒入 项目
-##支持
+2、导入
+    只需要导入'LxFTPRequest'这个类倒入 项目
+3、支持
 
 Both support iOS and Mac OS X platforms.
 Minimum support iOS version: iOS 5.0
 Minimum support OS X version: Mac OS X 10.7
 
 
-###获取资源列表:
+4、获取资源列表:
 ```
 LxFTPRequest * request = [LxFTPRequest resourceListRequest];
 request.serverURL = [[NSURL URLWithString:FTP_SCHEME_HOST]URLByAppendingPathComponent:SUB_DIRECTORY];
@@ -46,7 +50,7 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 [request start];
 ```
 
-###下载资源:
+5、下载资源:
 ```
 /**
 To implement breakpoint continuingly, you only need to guarantee
@@ -77,7 +81,7 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 [request start];
 ```
 
-###上传资源:
+6、上传资源:
 ```
 LxFTPRequest * request = [LxFTPRequest uploadRequest];
 request.serverURL = [NSURL URLWithString:FTP_SCHEME_HOST]URLByAppendingPathComponent:FILE_PATH];  
@@ -99,7 +103,7 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 [request start];
 ```
 
-###Create file or directory on ftp server:
+7、Create file or directory on ftp server:
 ```
 LxFTPRequest * request = [LxFTPRequest createResourceRequest];
 request.serverURL = [NSURL URLWithString:FTP_RESOURCE_PATH];    // directory path should be end up with '/'
@@ -116,7 +120,7 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 [request start];
 ```
 
-###Delete file or directory on ftp server:
+8、Delete file or directory on ftp server:
 
 ```
 /**
@@ -138,6 +142,6 @@ NSLog(@"domain = %ld, error = %ld", domain, error);
 [request start];
 ```
 
-#Be careful            
+9、Be careful            
 Demo must config FTP address, username, password correctly.
 
